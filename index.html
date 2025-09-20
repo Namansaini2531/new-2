@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBT Aadhaar Seeding Awareness Portal | Department of Social Justice & Empowerment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+</head>
+<body>
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar">
+        <div class="container">
+            <div class="accessibility-controls">
+                <button onclick="skipToContent()">Skip to Main content</button>
+                <div class="font-controls">
+                    <button onclick="changeFontSize('small')" class="font-btn">A-</button>
+                    <button onclick="changeFontSize('normal')" class="font-btn">A</button>
+                    <button onclick="changeFontSize('large')" class="font-btn">A+</button>
+                </div>
+                <div class="language-selector">
+                    <select onchange="translatePage(this.value)" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="bn">বাংলা</option>
+                        <option value="ta">தமிழ்</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23ff6600'/><path d='M30 30 L50 20 L70 30 L70 70 L50 80 L30 70 Z' fill='white'/><circle cx='50' cy='45' r='8' fill='%23ff6600'/><rect x='46' y='55' width='8' height='15' fill='%23ff6600'/></svg>" alt="Emblem of India" class="emblem">
+                    <div class="site-title">
+                        <h1>DBT Aadhaar Seeding Awareness Portal</h1>
+                        <p>Department of Social Justice & Empowerment, Government of India</p>
+                    </div>
+                </div>
+                <div class="header-logos">
+                    <img src="digi.webp" alt="Digital India" class="gov-logo" style="height:40px;vertical-align:middle;margin-right:12px;">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><rect width='100' height='50' fill='%23f97316'/><text x='50' y='30' text-anchor='middle' fill='white' font-size='12'>DBT Mission</text></svg>" alt="DBT Mission" class="gov-logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About DBT</a></li>
+                <li><a href="guide.html">Aadhaar Seeding Guide</a></li>
+                <li><a href="notices.html">Notices & Circulars</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search..." onkeypress="handleSearch(event)">
+                <button onclick="performSearch()">🔍</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Ensure Your Scholarship Reaches You</h1>
+                        <p class="hero-subtitle">Learn about DBT seeding for seamless scholarship disbursement under Pre-Matric and Post-Matric scholarship schemes for SC students. Get your account DBT-enabled today!</p>
+                        <div class="hero-buttons">
+                            <a href="guide.html" class="btn btn-primary">Get DBT Seeding Guide</a>
+                            <a href="notices.html" class="btn btn-secondary">Latest Notices</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Students with digital devices" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Notice -->
+        <section class="notice-banner">
+            <div class="container">
+                <div class="notice-content">
+                    <span class="notice-icon">📢</span>
+                    <div class="notice-text">
+                        <strong>Important:</strong> All scholarship payments are made through DBT-enabled Aadhaar seeded bank accounts only. Ensure your bank account is DBT-enabled for seamless fund transfers.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Information -->
+        <section class="key-info-section">
+            <div class="container">
+                <h2>Understanding DBT-Enabled Aadhaar Seeding</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="card-icon">🏦</div>
+                        <h3>What is DBT Seeding?</h3>
+                        <p>DBT seeding is the process of enabling your bank account to receive Direct Benefit Transfer payments from government schemes, including scholarships, using Aadhaar authentication.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">🔗</div>
+                        <h3>DBT-Enabled Account</h3>
+                        <p>A DBT-enabled account is specifically configured to receive government benefits and scholarships directly, ensuring faster and secure fund transfers.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">✅</div>
+                        <h3>Benefits</h3>
+                        <p>Ensures faster, transparent, and secure transfer of scholarships directly to your account without any intermediaries or delays.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section class="comparison-section">
+            <div class="container">
+            <h2>DBT Seeding vs Aadhaar Linking: Know the Difference</h2>
+            <div class="comparison-grid side-by-side">
+                <div class="comparison-card">
+                <div class="comparison-header">
+                    <h3>🔗 Aadhaar Linking</h3>
+                    <span class="comparison-badge basic">Basic</span>
+                </div>
+                <div class="comparison-content">
+                    <ul>
+                    <li>Simple connection of Aadhaar to bank account</li>
+                    <li>Used for identification purposes</li>
+                    <li>May not support DBT transactions</li>
+                    <li>Basic KYC compliance</li>
+                    <li>Limited to account verification</li>
+                    </ul>
+                    <div class="comparison-note">
+                    <strong>Note:</strong> This alone is NOT sufficient for scholarship payments
+                    </div>
+                </div>
+                </div>
+                <div class="comparison-card featured">
+                <div class="comparison-header">
+                    <h3>🌱 DBT Seeding</h3>
+                    <span class="comparison-badge recommended">Recommended</span>
+                </div>
+                <div class="comparison-content">
+                    <ul>
+                    <li>Complete DBT enablement of your account</li>
+                    <li>Enables government benefit transfers</li>
+                    <li>Supports scholarship payments</li>
+                    <li>Full compliance with DBT requirements</li>
+                    <li>Direct fund transfer capability</li>
+                    </ul>
+                    <div class="comparison-note">
+                    <strong>Required:</strong> Essential for receiving scholarship payments
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="comparison-cta">
+                <p><strong>Important:</strong> For scholarship payments, you need DBT-enabled Aadhaar seeding, not just basic Aadhaar linking!</p>
+                <a href="guide.html" class="btn btn-primary">Get DBT Seeding Guide</a>
+            </div>
+            </div>
+        </section>
+
+        <!-- Scholarship Schemes -->
+        <section class="schemes-section">
+            <div class="container">
+                <h2>Covered Scholarship Schemes</h2>
+                <div class="schemes-grid">
+                    <div class="scheme-card">
+                        <h3>Pre-Matric Scholarships</h3>
+                        <ul>
+                            <li>For SC students studying in classes I-X</li>
+                            <li>Covers tuition fees and maintenance allowance</li>
+                            <li>Income limit: ₹2.50 lakh per annum</li>
+                        </ul>
+                        <a href="guide.html" class="scheme-link">Learn More →</a>
+                    </div>
+                    <div class="scheme-card">
+                        <h3>Post-Matric Scholarships</h3>
+                        <ul>
+                            <li>For SC students in higher education</li>
+                            <li>Covers tuition fees and maintenance allowance</li>
+                            <li>Income limit: ₹2.50 lakh per annum</li>
+                        </ul>
+                        <a href="guide.html" class="scheme-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">50L+</div>
+                        <div class="stat-label">Students Benefited</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">₹5000Cr+</div>
+                        <div class="stat-label">Scholarships Disbursed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Direct Transfer Success</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">28</div>
+                        <div class="stat-label">States Covered</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fun Quiz Section -->
+        <section class="quiz-section">
+            <div class="container">
+                <div class="quiz-content">
+                        <h2>🎯 Test Your Knowledge!</h2>
+                        <p>Think you know everything about DBT seeding and Aadhaar? Let's find out!</p>
+                        <p class="quiz-subtitle">Would you like to play a quiz with us on DBT Aadhaar?</p>
+                        <div class="quiz-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🏆</span>
+                    <div class="quiz-action">
+                                <span>Win exciting prizes</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📚</span>
+                                <span>Learn while playing</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⏱️</span>
+                                <span>Quick 5-minute quiz</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz-action">
+                        <a href="quiz.html" target="_blank" class="btn btn-quiz">
+                            <span class="btn-icon">🎮</span>
+                            <span class="btn-text">Play Quiz Now!</span>
+                        </a>
+                        <p class="quiz-note">* Quiz opens in a new tab. No registration required!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="quick-links-section">
+            <div class="container">
+                <h2>Quick Links</h2>
+                <div class="links-grid">
+                    <a href="guide.html" class="quick-link">
+                        <div class="link-icon">📋</div>
+                        <div class="link-content">
+                            <h3>Step-by-Step Guide</h3>
+                            <p>Complete guide to seed your Aadhaar with bank account</p>
+                        </div>
+                    </a>
+                    <a href="notices.html" class="quick-link">
+                        <div class="link-icon">📄</div>
+                        <div class="link-content">
+                            <h3>Notices & Circulars</h3>
+                            <p>Latest announcements and official circulars</p>
+                        </div>
+                    </a>
+                    <a href="contact.html" class="quick-link">
+                        <div class="link-icon">📞</div>
+                        <div class="link-content">
+                            <h3>Helpline Support</h3>
+                            <p>Get help and support for your queries</p>
+                        </div>
+                    </a>
+                    <a href="faq.html" class="quick-link">
+                        <div class="link-icon">❓</div>
+                        <div class="link-content">
+                            <h3>Frequently Asked Questions</h3>
+                            <p>Find answers to common questions</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Chatbot Integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="DBT_BOT"
+  agent-id="0afcacfc-bba6-404a-b5b9-d76e08e4daf5"
+  language-code="en"
+></df-messenger>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Important Links</h3>
+                        <ul>
+                            <li><a href="https://www.india.gov.in">India.gov.in</a></li>
+                            <li><a href="https://digitalindia.gov.in">Digital India</a></li>
+                            <li><a href="https://dbtbharat.gov.in">DBT Mission</a></li>
+                            <li><a href="https://socialjustice.gov.in">Ministry of Social Justice & Empowerment</a></li>
+                            <li><a href="https://www.mygov.in">MyGov</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Policies</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Copyright Policy</a></li>
+                            <li><a href="#">Accessibility Statement</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info">
+                            <p><strong>Department of Social Justice & Empowerment</strong></p>
+                            <p>Shastri Bhawan, Dr. Rajendra Prasad Road</p>
+                            <p>New Delhi - 110001</p>
+                            <p>Phone: 011-23381000</p>
+                            <p>Email: info@socialjustice.gov.in</p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Helpline</h3>
+                        <div class="helpline-info">
+                            <p><strong>Scholarship Helpline</strong></p>
+                            <p>📞 1800-11-1234 (Toll Free)</p>
+                            <p>🕒 Mon-Fri: 9:00 AM - 6:00 PM</p>
+                            <p><strong>Technical Support</strong></p>
+                            <p>📞 0120-4001000</p>
+                            <p>📧 support@dbtportal.gov.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Department of Social Justice & Empowerment, Government of India. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

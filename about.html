@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About DBT | DBT Awareness Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+</head>
+<body>
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar">
+        <div class="container">
+            <div class="accessibility-controls">
+                <button onclick="skipToContent()">Skip to Main content</button>
+                <div class="font-controls">
+                    <button onclick="changeFontSize('small')" class="font-btn">A-</button>
+                    <button onclick="changeFontSize('normal')" class="font-btn">A</button>
+                    <button onclick="changeFontSize('large')" class="font-btn">A+</button>
+                </div>
+                <div class="language-selector">
+                    <select onchange="translatePage(this.value)" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="bn">বাংলা</option>
+                        <option value="ta">தমிழ்</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23ff6600'/><path d='M30 30 L50 20 L70 30 L70 70 L50 80 L30 70 Z' fill='white'/><circle cx='50' cy='45' r='8' fill='%23ff6600'/><rect x='46' y='55' width='8' height='15' fill='%23ff6600'/></svg>" alt="Emblem of India" class="emblem">
+                    <div class="site-title">
+                        <h1>DBT Aadhaar Seeding Awareness Portal</h1>
+                        <p>Department of Social Justice & Empowerment, Government of India</p>
+                    </div>
+                </div>
+                <div class="header-logos">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><rect width='100' height='50' fill='%232563eb'/><text x='50' y='30' text-anchor='middle' fill='white' font-size='12'>Digital India</text></svg>" alt="Digital India" class="gov-logo">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><rect width='100' height='50' fill='%23f97316'/><text x='50' y='30' text-anchor='middle' fill='white' font-size='12'>DBT Mission</text></svg>" alt="DBT Mission" class="gov-logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About DBT</a></li>
+                <li><a href="guide.html">Aadhaar Seeding Guide</a></li>
+                <li><a href="notices.html">Notices & Circulars</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search..." onkeypress="handleSearch(event)">
+                <button onclick="performSearch()">🔍</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> > <span>About DBT</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <section class="about-section">
+            <div class="container">
+                <div class="about-header">
+                    <h1>About Direct Benefit Transfer (DBT)</h1>
+                    <p>Understanding the revolutionary system that ensures government benefits reach beneficiaries directly</p>
+                </div>
+
+                <!-- DBT Overview -->
+                <div class="about-content">
+                    <div class="content-section">
+                        <h2>What is Direct Benefit Transfer?</h2>
+                        <p>Direct Benefit Transfer (DBT) is a transformative government initiative launched by the Government of India to reform the existing mechanism of transferring government subsidies and benefits. Under this system, benefits are transferred directly to the bank accounts of beneficiaries through Aadhaar authentication, eliminating intermediaries and ensuring that benefits reach the intended recipients.</p>
+                        
+                        <div class="highlight-box">
+                            <h3>🎯 Mission Statement</h3>
+                            <p>"To ensure that government subsidies and benefits reach the intended beneficiaries in a targeted, transparent, and time-bound manner while eliminating leakages and corruption."</p>
+                        </div>
+                    </div>
+
+                    <!-- Key Features -->
+                    <div class="content-section">
+                        <h2>Key Features of DBT</h2>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">🎯</div>
+                                <h3>Targeted Delivery</h3>
+                                <p>Ensures benefits reach only genuine beneficiaries through Aadhaar authentication and verification.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⚡</div>
+                                <h3>Speed & Efficiency</h3>
+                                <p>Real-time transfer of benefits directly to bank accounts, reducing processing time significantly.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔒</div>
+                                <h3>Security & Transparency</h3>
+                                <p>Secure transactions with complete audit trails, enabling better monitoring and accountability.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">💸</div>
+                                <h3>Reduced Leakages</h3>
+                                <p>Eliminates intermediaries and reduces corruption, ensuring 100% benefit reaches beneficiaries.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How DBT Works -->
+                    <div class="content-section">
+                        <h2>How Does DBT Work?</h2>
+                        <div class="process-flow">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Beneficiary Registration</h3>
+                                    <p>Eligible beneficiaries register for government schemes with required documents and Aadhaar details.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Aadhaar Authentication</h3>
+                                    <p>System verifies beneficiary identity using Aadhaar authentication and bank account details.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Benefit Calculation</h3>
+                                    <p>Government systems calculate the benefit amount based on scheme parameters and eligibility criteria.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Direct Transfer</h3>
+                                    <p>Benefits are transferred directly to the beneficiary's DBT-enabled Aadhaar seeded bank account.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits of DBT -->
+                    <div class="content-section">
+                        <h2>Benefits of DBT System</h2>
+                        <div class="benefits-container">
+                            <div class="benefits-grid">
+                                <div class="benefit-item">
+                                    <h3>For Beneficiaries</h3>
+                                    <ul>
+                                        <li>Direct receipt of benefits without delays</li>
+                                        <li>No intermediary commissions or deductions</li>
+                                        <li>Real-time status tracking of payments</li>
+                                        <li>Reduced paperwork and documentation</li>
+                                        <li>24/7 access to benefit information</li>
+                                    </ul>
+                                </div>
+                                <div class="benefit-item">
+                                    <h3>For Government</h3>
+                                    <ul>
+                                        <li>Reduced administrative costs</li>
+                                        <li>Better targeting of beneficiaries</li>
+                                        <li>Real-time monitoring and evaluation</li>
+                                        <li>Elimination of ghost beneficiaries</li>
+                                        <li>Improved financial inclusion</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DBT in Scholarship Context -->
+                    <div class="content-section scholarship-context">
+                        <h2>DBT for Scholarship Schemes</h2>
+                        <div class="scholarship-info">
+                            <div class="scholarship-card">
+                                <h3>Pre-Matric Scholarships (SC)</h3>
+                                <div class="scheme-details">
+                                    <p><strong>Objective:</strong> Encourage SC students to attend school regularly and complete school education</p>
+                                    <p><strong>Coverage:</strong> Classes I to X</p>
+                                    <p><strong>Benefits:</strong> Tuition fees, examination fees, and maintenance allowance</p>
+                                    <p><strong>Income Limit:</strong> ₹2.50 lakh per annum</p>
+                                </div>
+                            </div>
+                            <div class="scholarship-card">
+                                <h3>Post-Matric Scholarships (SC)</h3>
+                                <div class="scheme-details">
+                                    <p><strong>Objective:</strong> Enable SC students to pursue higher education</p>
+                                    <p><strong>Coverage:</strong> Class XI onwards including professional courses</p>
+                                    <p><strong>Benefits:</strong> Tuition fees, maintenance allowance, and other compulsory fees</p>
+                                    <p><strong>Income Limit:</strong> ₹2.50 lakh per annum</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="important-note">
+                            <h3>⚠️ Critical Requirement</h3>
+                            <p>All scholarship payments under these schemes are made ONLY through DBT-enabled Aadhaar seeded bank accounts. Students without proper Aadhaar seeding will face payment delays or rejections.</p>
+                        </div>
+                    </div>
+
+                    <!-- Implementation Statistics -->
+                    <div class="content-section">
+                        <h2>DBT Implementation Impact</h2>
+                        <div class="stats-showcase">
+                            <div class="stat-card">
+                                <div class="stat-number">950+</div>
+                                <div class="stat-description">Government Schemes Covered</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">₹7.35 Lakh Cr</div>
+                                <div class="stat-description">Total Benefits Transferred</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">130+ Cr</div>
+                                <div class="stat-description">Beneficiaries Reached</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">99.3%</div>
+                                <div class="stat-description">Transaction Success Rate</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technology Infrastructure -->
+                    <div class="content-section">
+                        <h2>Technology Infrastructure</h2>
+                        <div class="tech-info">
+                            <div class="tech-component">
+                                <h3>🔐 Aadhaar Authentication</h3>
+                                <p>Uses UIDAI's authentication services to verify beneficiary identity through biometric and demographic data, ensuring only genuine beneficiaries receive benefits.</p>
+                            </div>
+                            <div class="tech-component">
+                                <h3>🏦 Banking Network</h3>
+                                <p>Integrated with all major banks through NPCI infrastructure, enabling seamless transfer to any bank account across India.</p>
+                            </div>
+                            <div class="tech-component">
+                                <h3>📊 PFMS Integration</h3>
+                                <p>Public Financial Management System (PFMS) ensures transparent tracking and monitoring of all government expenditures and transfers.</p>
+                            </div>
+                            <div class="tech-component">
+                                <h3>📱 Digital Platforms</h3>
+                                <p>Mobile and web applications provide beneficiaries with real-time access to payment status and benefit information.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Chatbot Integration -->
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="DBT_BOT"
+  agent-id="0afcacfc-bba6-404a-b5b9-d76e08e4daf5"
+  language-code="en"
+></df-messenger>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Important Links</h3>
+                        <ul>
+                            <li><a href="https://www.india.gov.in">India.gov.in</a></li>
+                            <li><a href="https://digitalindia.gov.in">Digital India</a></li>
+                            <li><a href="https://dbtbharat.gov.in">DBT Mission</a></li>
+                            <li><a href="https://socialjustice.gov.in">Ministry of Social Justice & Empowerment</a></li>
+                            <li><a href="https://www.mygov.in">MyGov</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Policies</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Copyright Policy</a></li>
+                            <li><a href="#">Accessibility Statement</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info">
+                            <p><strong>Department of Social Justice & Empowerment</strong></p>
+                            <p>Shastri Bhawan, Dr. Rajendra Prasad Road</p>
+                            <p>New Delhi - 110001</p>
+                            <p>Phone: 011-23381000</p>
+                            <p>Email: info@socialjustice.gov.in</p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Helpline</h3>
+                        <div class="helpline-info">
+                            <p><strong>Scholarship Helpline</strong></p>
+                            <p>📞 1800-11-1234 (Toll Free)</p>
+                            <p>🕒 Mon-Fri: 9:00 AM - 6:00 PM</p>
+                            <p><strong>Technical Support</strong></p>
+                            <p>📞 0120-4001000</p>
+                            <p>📧 support@dbtportal.gov.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Department of Social Justice & Empowerment, Government of India. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

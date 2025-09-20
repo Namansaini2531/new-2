@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhaar Seeding Guide | DBT Awareness Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+</head>
+<body>
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar">
+        <div class="container">
+            <div class="accessibility-controls">
+                <button onclick="skipToContent()">Skip to Main content</button>
+                <div class="font-controls">
+                    <button onclick="changeFontSize('small')" class="font-btn">A-</button>
+                    <button onclick="changeFontSize('normal')" class="font-btn">A</button>
+                    <button onclick="changeFontSize('large')" class="font-btn">A+</button>
+                </div>
+                <div class="language-selector">
+                    <select onchange="translatePage(this.value)" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="bn">বাংলা</option>
+                        <option value="ta">தমিழ்</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23ff6600'/><path d='M30 30 L50 20 L70 30 L70 70 L50 80 L30 70 Z' fill='white'/><circle cx='50' cy='45' r='8' fill='%23ff6600'/><rect x='46' y='55' width='8' height='15' fill='%23ff6600'/></svg>" alt="Emblem of India" class="emblem">
+                    <div class="site-title">
+                        <h1>DBT Aadhaar Seeding Awareness Portal</h1>
+                        <p>Department of Social Justice & Empowerment, Government of India</p>
+                    </div>
+                </div>
+                <div class="header-logos">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><rect width='100' height='50' fill='%232563eb'/><text x='50' y='30' text-anchor='middle' fill='white' font-size='12'>Digital India</text></svg>" alt="Digital India" class="gov-logo">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><rect width='100' height='50' fill='%23f97316'/><text x='50' y='30' text-anchor='middle' fill='white' font-size='12'>DBT Mission</text></svg>" alt="DBT Mission" class="gov-logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About DBT</a></li>
+                <li><a href="guide.html" class="active">Aadhaar Seeding Guide</a></li>
+                <li><a href="notices.html">Notices & Circulars</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search..." onkeypress="handleSearch(event)">
+                <button onclick="performSearch()">🔍</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> > <span>Aadhaar Seeding Guide</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <section class="guide-section">
+            <div class="container">
+                <div class="guide-header">
+                    <h1>Complete Guide to DBT-Enabled Aadhaar Seeding</h1>
+                    <p class="guide-subtitle">Follow these simple steps to ensure your scholarship reaches your account without any delays</p>
+                </div>
+
+                <!-- Important Information -->
+                <div class="important-box">
+                    <h3>⚠️ Important Information</h3>
+                    <ul>
+                        <li>Your bank account must be DBT-enabled and Aadhaar seeded</li>
+                        <li>Simply having Aadhaar linked to your account is NOT sufficient</li>
+                        <li>The account holder name should match exactly with Aadhaar</li>
+                        <li>Ensure your mobile number is updated in both Aadhaar and bank records</li>
+                    </ul>
+                </div>
+
+                <!-- Step-by-Step Guide -->
+                <div class="steps-container">
+                    <h2>Step-by-Step Process</h2>
+                    
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Visit Your Bank Branch</h3>
+                            <p>Go to the branch where you have your savings account. Carry the following documents:</p>
+                            <ul>
+                                <li>Original Aadhaar Card</li>
+                                <li>Bank Passbook</li>
+                                <li>Identity Proof (if name differs)</li>
+                                <li>Mobile phone for OTP verification</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Request for Aadhaar Seeding</h3>
+                            <p>Inform the bank official that you want to:</p>
+                            <ul>
+                                <li>Link your Aadhaar number with your bank account</li>
+                                <li>Enable DBT (Direct Benefit Transfer) on your account</li>
+                                <li>Verify that your account can receive government benefits</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Fill the Application Form</h3>
+                            <p>The bank will provide you with an Aadhaar seeding form. Fill in:</p>
+                            <ul>
+                                <li>Your complete bank account number</li>
+                                <li>12-digit Aadhaar number</li>
+                                <li>Updated mobile number</li>
+                                <li>Sign the form as per your bank signature</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>OTP Verification</h3>
+                            <p>Complete the verification process:</p>
+                            <ul>
+                                <li>Bank will send OTP to your Aadhaar-registered mobile</li>
+                                <li>Provide the OTP to the bank official</li>
+                                <li>Wait for the system confirmation</li>
+                                <li>Collect the acknowledgment receipt</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Verification & Confirmation</h3>
+                            <p>Ensure the process is completed successfully:</p>
+                            <ul>
+                                <li>Ask for written confirmation from the bank</li>
+                                <li>Note down the reference number if provided</li>
+                                <li>Verify your account status online after 2-3 days</li>
+                                <li>Keep the acknowledgment safe for future reference</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alternative Methods -->
+                <div class="alternative-methods">
+                    <h2>Alternative Methods</h2>
+                    
+                    <div class="method-card">
+                        <h3>🏧 ATM Method</h3>
+                        <p>Some banks allow Aadhaar seeding through ATM:</p>
+                        <ul>
+                            <li>Insert your debit card and enter PIN</li>
+                            <li>Select "Aadhaar Services" option</li>
+                            <li>Choose "Link Aadhaar Number"</li>
+                            <li>Enter your 12-digit Aadhaar number</li>
+                            <li>Complete OTP verification</li>
+                        </ul>
+                        <p><strong>Note:</strong> This facility may not be available in all banks.</p>
+                    </div>
+
+                    <div class="method-card">
+                        <h3>📱 Online/Mobile Banking</h3>
+                        <p>Link through your bank's online portal:</p>
+                        <ul>
+                            <li>Login to your net banking account</li>
+                            <li>Look for "Aadhaar Services" or "Link Aadhaar"</li>
+                            <li>Enter your Aadhaar number</li>
+                            <li>Verify through OTP</li>
+                            <li>Save the confirmation details</li>
+                        </ul>
+                        <p><strong>Note:</strong> Available only in select banks with this feature.</p>
+                    </div>
+                </div>
+
+                <!-- Verification -->
+                <div class="verification-section">
+                    <h2>How to Verify Your DBT Status</h2>
+                    <div class="verification-methods">
+                        <div class="verify-card">
+                            <h3>📧 SMS Method</h3>
+                            <p>Send SMS: <strong>UIDAI STATE your_aadhaar_number</strong> to <strong>51969</strong></p>
+                            <p>You will receive confirmation of linked bank accounts</p>
+                        </div>
+                        <div class="verify-card">
+                            <h3>🌐 Online Verification</h3>
+                            <p>Visit: <strong>resident.uidai.gov.in</strong></p>
+                            <p>Use "Aadhaar Services" to check bank account linkage</p>
+                        </div>
+                        <div class="verify-card">
+                            <h3>🏦 Bank Statement</h3>
+                            <p>Request updated bank statement showing Aadhaar seeding status</p>
+                            <p>Look for "Aadhaar Linked: Yes" mention</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Issues -->
+                <div class="common-issues">
+                    <h2>Common Issues & Solutions</h2>
+                    <div class="issue-accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>Name Mismatch Between Aadhaar and Bank Account</h3>
+                                <span class="accordion-icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>Solution:</strong> Update your name in either Aadhaar or bank account to match exactly. Minor spelling differences can cause rejection.</p>
+                                <ul>
+                                    <li>For Aadhaar name change: Visit Aadhaar center with supporting documents</li>
+                                    <li>For bank name change: Submit request with identity proofs</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>Mobile Number Not Updated</h3>
+                                <span class="accordion-icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>Solution:</strong> Ensure the same mobile number is registered with both Aadhaar and your bank account.</p>
+                                <ul>
+                                    <li>Update mobile in Aadhaar through OTP or biometric verification</li>
+                                    <li>Update mobile in bank through written request</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>Account Not DBT Enabled</h3>
+                                <span class="accordion-icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>Solution:</strong> Specifically request your bank to enable DBT on your account along with Aadhaar seeding.</p>
+                                <ul>
+                                    <li>Visit branch and fill DBT enablement form</li>
+                                    <li>Ensure CBS (Core Banking System) reflects DBT status</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>Transaction Failed During Seeding</h3>
+                                <span class="accordion-icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>Solution:</strong> Try the process again after some time or use alternative methods.</p>
+                                <ul>
+                                    <li>Check network connectivity and try again</li>
+                                    <li>Verify Aadhaar number is entered correctly</li>
+                                    <li>Contact bank's customer service for assistance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact for Help -->
+                <div class="help-section">
+                    <h2>Need Help?</h2>
+                    <div class="help-cards">
+                        <div class="help-card">
+                            <h3>📞 Helpline Support</h3>
+                            <p>Call our toll-free helpline for assistance</p>
+                            <p><strong>1800-11-1234</strong></p>
+                        </div>
+                        <div class="help-card">
+                            <h3>💬 Live Chat</h3>
+                            <p>Chat with our support team</p>
+                            <a href="contact.html" class="help-link">Start Chat</a>
+                        </div>
+                        <div class="help-card">
+                            <h3>📧 Email Support</h3>
+                            <p>Send us your queries via email</p>
+                            <p><strong>support@dbtportal.gov.in</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="DBT_BOT"
+  agent-id="0afcacfc-bba6-404a-b5b9-d76e08e4daf5"
+  language-code="en"
+></df-messenger>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Important Links</h3>
+                        <ul>
+                            <li><a href="https://www.india.gov.in">India.gov.in</a></li>
+                            <li><a href="https://digitalindia.gov.in">Digital India</a></li>
+                            <li><a href="https://dbtbharat.gov.in">DBT Mission</a></li>
+                            <li><a href="https://socialjustice.gov.in">Ministry of Social Justice & Empowerment</a></li>
+                            <li><a href="https://www.mygov.in">MyGov</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Policies</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Copyright Policy</a></li>
+                            <li><a href="#">Accessibility Statement</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info">
+                            <p><strong>Department of Social Justice & Empowerment</strong></p>
+                            <p>Shastri Bhawan, Dr. Rajendra Prasad Road</p>
+                            <p>New Delhi - 110001</p>
+                            <p>Phone: 011-23381000</p>
+                            <p>Email: info@socialjustice.gov.in</p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Helpline</h3>
+                        <div class="helpline-info">
+                            <p><strong>Scholarship Helpline</strong></p>
+                            <p>📞 1800-11-1234 (Toll Free)</p>
+                            <p>🕒 Mon-Fri: 9:00 AM - 6:00 PM</p>
+                            <p><strong>Technical Support</strong></p>
+                            <p>📞 0120-4001000</p>
+                            <p>📧 support@dbtportal.gov.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Department of Social Justice & Empowerment, Government of India. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

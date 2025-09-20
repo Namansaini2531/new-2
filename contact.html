@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | DBT Awareness Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+</head>
+<body>
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar">
+        <div class="container">
+            <div class="accessibility-controls">
+                <button onclick="skipToContent()">Skip to Main content</button>
+                <div class="font-controls">
+                    <button onclick="changeFontSize('small')" class="font-btn">A-</button>
+                    <button onclick="changeFontSize('normal')" class="font-btn">A</button>
+                    <button onclick="changeFontSize('large')" class="font-btn">A+</button>
+                </div>
+                <div class="language-selector">
+                    <select onchange="translatePage(this.value)" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="bn">বাংলা</option>
+                        <option value="ta">தமிழ்</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23ff6600'/><path d='M30 30 L50 20 L70 30 L70 70 L50 80 L30 70 Z' fill='white'/><circle cx='50' cy='45' r='8' fill='%23ff6600'/><rect x='46' y='55' width='8' height='15' fill='%23ff6600'/></svg>" alt="Emblem of India" class="emblem">
+                    <div class="site-title">
+                        <h1>DBT Aadhaar Seeding Awareness Portal</h1>
+                        <p>Department of Social Justice & Empowerment, Government of India</p>
+                    </div>
+                </div>
+                <div class="header-logos">
+                    <img src="digi.webp" alt="Digital India" class="gov-logo" style="height:40px;vertical-align:middle;margin-right:12px;">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><rect width='100' height='50' fill='%23f97316'/><text x='50' y='30' text-anchor='middle' fill='white' font-size='12'>DBT Mission</text></svg>" alt="DBT Mission" class="gov-logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About DBT</a></li>
+                <li><a href="guide.html">Aadhaar Seeding Guide</a></li>
+                <li><a href="notices.html">Notices & Circulars</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search..." onkeypress="handleSearch(event)">
+                <button onclick="performSearch()">🔍</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> > <span>Contact Us</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-header">
+                    <h1>Contact Us</h1>
+                    <p>Get in touch with us for any queries or assistance regarding DBT-enabled Aadhaar seeding and scholarship schemes</p>
+                </div>
+
+                <!-- Emergency Contact -->
+                <div class="emergency-contact">
+                    <div class="emergency-card">
+                        <h3>🚨 Emergency Helpline</h3>
+                        <p>For urgent scholarship-related issues</p>
+                        <div class="emergency-number">1800-11-1234</div>
+                        <p class="emergency-hours">Available 24/7</p>
+                    </div>
+                </div>
+
+                <!-- Contact Methods -->
+                <div class="contact-methods">
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <div class="contact-icon">📞</div>
+                            <h3>Toll-Free Helpline</h3>
+                            <div class="contact-details">
+                                <p><strong>1800-11-1234</strong></p>
+                                <p>General queries and support</p>
+                                <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                                <p>Sat: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">📧</div>
+                            <h3>Email Support</h3>
+                            <div class="contact-details">
+                                <p><strong>support@dbtportal.gov.in</strong></p>
+                                <p>Technical support and queries</p>
+                                <p>Response within 24 hours</p>
+                                <p>Mon-Fri: Business hours</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">💬</div>
+                            <h3>Live Chat</h3>
+                            <div class="contact-details">
+                                <p><strong>Chat Support Available</strong></p>
+                                <p>Instant assistance online</p>
+                                <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                                <button onclick="startChat()" class="chat-btn">Start Chat</button>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">📱</div>
+                            <h3>SMS Support</h3>
+                            <div class="contact-details">
+                                <p><strong>Send SMS to 51969</strong></p>
+                                <p>Format: DBT HELP [Your Query]</p>
+                                <p>Quick responses for common issues</p>
+                                <p>Available 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Send Us Your Query</h2>
+                    <div class="form-container">
+                        <form class="contact-form" onsubmit="submitContactForm(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="queryType">Query Type *</label>
+                                <select id="queryType" name="queryType" required>
+                                    <option value="">Select query type</option>
+                                    <option value="aadhaar-seeding">Aadhaar Seeding Issues</option>
+                                    <option value="scholarship-application">Scholarship Application</option>
+                                    <option value="payment-issues">Payment Issues</option>
+                                    <option value="technical-support">Technical Support</option>
+                                    <option value="grievance">Grievance</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <input type="text" id="subject" name="subject" placeholder="Brief description of your query" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Detailed Message *</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Please provide detailed information about your query..." required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="attachment">Attach File (Optional)</label>
+                                <input type="file" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                                <small>Supported formats: PDF, JPG, PNG, DOC, DOCX (Max 5MB)</small>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <label for="privacy">I agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> *</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary submit-btn">Submit Query</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Office Addresses -->
+                <div class="office-addresses">
+                    <h2>Office Addresses</h2>
+                    <div class="offices-grid">
+                        <div class="office-card">
+                            <h3>Head Office</h3>
+                            <div class="office-details">
+                                <p><strong>Department of Social Justice & Empowerment</strong></p>
+                                <p>Shastri Bhawan, Dr. Rajendra Prasad Road</p>
+                                <p>New Delhi - 110001</p>
+                                <p>Phone: 011-23381000</p>
+                                <p>Fax: 011-23384918</p>
+                                <p>Email: info@socialjustice.gov.in</p>
+                            </div>
+                            <div class="office-hours">
+                                <p><strong>Office Hours:</strong></p>
+                                <p>Mon-Fri: 9:00 AM - 5:30 PM</p>
+                                <p>Lunch: 1:00 PM - 1:45 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="office-card">
+                            <h3>Technical Support Center</h3>
+                            <div class="office-details">
+                                <p><strong>DBT Technical Support</strong></p>
+                                <p>A-Block, Technology Bhawan</p>
+                                <p>Sector 1, R.K. Puram</p>
+                                <p>New Delhi - 110066</p>
+                                <p>Phone: 0120-4001000</p>
+                                <p>Email: support@dbtportal.gov.in</p>
+                            </div>
+                            <div class="office-hours">
+                                <p><strong>Support Hours:</strong></p>
+                                <p>Mon-Sun: 8:00 AM - 8:00 PM</p>
+                                <p>Emergency: 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regional Offices -->
+                <div class="regional-offices">
+                    <h2>Regional Support Centers</h2>
+                    <div class="regions-grid">
+                        <div class="region-card">
+                            <h4>Northern Region</h4>
+                            <p>Covers: Delhi, Punjab, Haryana, Himachal Pradesh, J&K, Uttarakhand</p>
+                            <p>📞 011-23451000</p>
+                            <p>📧 north@dbtportal.gov.in</p>
+                        </div>
+                        <div class="region-card">
+                            <h4>Western Region</h4>
+                            <p>Covers: Maharashtra, Gujarat, Goa, Rajasthan, MP</p>
+                            <p>📞 022-26721000</p>
+                            <p>📧 west@dbtportal.gov.in</p>
+                        </div>
+                        <div class="region-card">
+                            <h4>Southern Region</h4>
+                            <p>Covers: Karnataka, Kerala, Tamil Nadu, Andhra Pradesh, Telangana</p>
+                            <p>📞 080-22341000</p>
+                            <p>📧 south@dbtportal.gov.in</p>
+                        </div>
+                        <div class="region-card">
+                            <h4>Eastern Region</h4>
+                            <p>Covers: West Bengal, Odisha, Jharkhand, Bihar, Assam, NE States</p>
+                            <p>📞 033-22451000</p>
+                            <p>📧 east@dbtportal.gov.in</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Quick Links -->
+                <div class="faq-quick-links">
+                    <h2>Quick Solutions</h2>
+                    <p>Before contacting us, check if your query is answered in our FAQ section:</p>
+                    <div class="faq-links">
+                        <a href="faq.html#aadhaar-linking" class="faq-link">How to link Aadhaar?</a>
+                        <a href="faq.html#dbt-status" class="faq-link">Check DBT status</a>
+                        <a href="faq.html#payment-issues" class="faq-link">Payment not received</a>
+                        <a href="faq.html#application-status" class="faq-link">Application status</a>
+                    </div>
+                    <a href="faq.html" class="btn btn-secondary">View All FAQs</a>
+                </div>
+            </div>
+        </section>
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="DBT_BOT"
+  agent-id="0afcacfc-bba6-404a-b5b9-d76e08e4daf5"
+  language-code="en"
+></df-messenger>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Important Links</h3>
+                        <ul>
+                            <li><a href="https://www.india.gov.in">India.gov.in</a></li>
+                            <li><a href="https://digitalindia.gov.in">Digital India</a></li>
+                            <li><a href="https://dbtbharat.gov.in">DBT Mission</a></li>
+                            <li><a href="https://socialjustice.gov.in">Ministry of Social Justice & Empowerment</a></li>
+                            <li><a href="https://www.mygov.in">MyGov</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Policies</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Copyright Policy</a></li>
+                            <li><a href="#">Accessibility Statement</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info">
+                            <p><strong>Department of Social Justice & Empowerment</strong></p>
+                            <p>Shastri Bhawan, Dr. Rajendra Prasad Road</p>
+                            <p>New Delhi - 110001</p>
+                            <p>Phone: 011-23381000</p>
+                            <p>Email: info@socialjustice.gov.in</p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Helpline</h3>
+                        <div class="helpline-info">
+                            <p><strong>Scholarship Helpline</strong></p>
+                            <p>📞 1800-11-1234 (Toll Free)</p>
+                            <p>🕒 Mon-Fri: 9:00 AM - 6:00 PM</p>
+                            <p><strong>Technical Support</strong></p>
+                            <p>📞 0120-4001000</p>
+                            <p>📧 support@dbtportal.gov.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Department of Social Justice & Empowerment, Government of India. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices & Circulars | DBT Awareness Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+</head>
+<body>
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar">
+        <div class="container">
+            <div class="accessibility-controls">
+                <button onclick="skipToContent()">Skip to Main content</button>
+                <div class="font-controls">
+                    <button onclick="changeFontSize('small')" class="font-btn">A-</button>
+                    <button onclick="changeFontSize('normal')" class="font-btn">A</button>
+                    <button onclick="changeFontSize('large')" class="font-btn">A+</button>
+                </div>
+                <div class="language-selector">
+                    <select onchange="translatePage(this.value)" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="bn">বাংলা</option>
+                        <option value="ta">தமிழ்</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23ff6600'/><path d='M30 30 L50 20 L70 30 L70 70 L50 80 L30 70 Z' fill='white'/><circle cx='50' cy='45' r='8' fill='%23ff6600'/><rect x='46' y='55' width='8' height='15' fill='%23ff6600'/></svg>" alt="Emblem of India" class="emblem">
+                    <div class="site-title">
+                        <h1>DBT Aadhaar Seeding Awareness Portal</h1>
+                        <p>Department of Social Justice & Empowerment, Government of India</p>
+                    </div>
+                </div>
+                    <div class="header-logos">
+                        <img src="digi.webp" alt="Digital India" class="gov-logo" style="height:40px;vertical-align:middle;margin-right:12px;">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><rect width='100' height='50' fill='%23f97316'/><text x='50' y='30' text-anchor='middle' fill='white' font-size='12'>DBT Mission</text></svg>" alt="DBT Mission" class="gov-logo">
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About DBT</a></li>
+                <li><a href="guide.html">Aadhaar Seeding Guide</a></li>
+                <li><a href="notices.html" class="active">Notices & Circulars</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search notices..." onkeypress="handleSearch(event)" onkeyup="filterNotices()">
+                <button onclick="performSearch()">🔍</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> > <span>Notices & Circulars</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <section class="notices-section">
+            <div class="container">
+                <div class="notices-header">
+                    <h1>Notices & Circulars</h1>
+                    <p>Stay updated with the latest announcements and official communications</p>
+                </div>
+
+                <!-- Filter and Sort -->
+                <div class="notices-filter">
+                    <div class="filter-controls">
+                        <select id="typeFilter" onchange="filterNotices()">
+                            <option value="all">All Types</option>
+                            <option value="notice">Notices</option>
+                            <option value="circular">Circulars</option>
+                            <option value="announcement">Announcements</option>
+                            <option value="advisory">Advisories</option>
+                        </select>
+                        <select id="yearFilter" onchange="filterNotices()">
+                            <option value="all">All Years</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                        </select>
+                        <button onclick="clearFilters()" class="clear-btn">Clear Filters</button>
+                    </div>
+                    <div class="sort-controls">
+                        <select id="sortBy" onchange="sortNotices()">
+                            <option value="date-desc">Newest First</option>
+                            <option value="date-asc">Oldest First</option>
+                            <option value="title-asc">Title A-Z</option>
+                            <option value="title-desc">Title Z-A</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Notices List -->
+                <div class="notices-container" id="noticesContainer">
+                    <div class="notice-item" data-type="notice" data-year="2024" data-date="2024-03-15">
+                        <div class="notice-header">
+                            <div class="notice-badge notice">Notice</div>
+                            <div class="notice-date">March 15, 2024</div>
+                        </div>
+                        <h3 class="notice-title">Mandatory Aadhaar Seeding for All Scholarship Applicants</h3>
+                        <p class="notice-excerpt">All students applying for Pre-Matric and Post-Matric scholarships must ensure their bank accounts are DBT-enabled and Aadhaar seeded. Deadline extended to April 30, 2024.</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadPDF('notice-001')" class="btn-download">📄 Download PDF</button>
+                            <button onclick="viewDetails('notice-001')" class="btn-view">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="notice-item" data-type="circular" data-year="2024" data-date="2024-03-10">
+                        <div class="notice-header">
+                            <div class="notice-badge circular">Circular</div>
+                            <div class="notice-date">March 10, 2024</div>
+                        </div>
+                        <h3 class="notice-title">Updated Guidelines for DBT Implementation</h3>
+                        <p class="notice-excerpt">Revised guidelines for implementing Direct Benefit Transfer for scholarship schemes. New procedures for verification and disbursement.</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadPDF('circular-001')" class="btn-download">📄 Download PDF</button>
+                            <button onclick="viewDetails('circular-001')" class="btn-view">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="notice-item" data-type="announcement" data-year="2024" data-date="2024-03-05">
+                        <div class="notice-header">
+                            <div class="notice-badge announcement">Announcement</div>
+                            <div class="notice-date">March 5, 2024</div>
+                        </div>
+                        <h3 class="notice-title">Scholarship Disbursement Schedule - March 2024</h3>
+                        <p class="notice-excerpt">Schedule for scholarship disbursement for the current academic year. Students are advised to check their account status regularly.</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadPDF('announcement-001')" class="btn-download">📄 Download PDF</button>
+                            <button onclick="viewDetails('announcement-001')" class="btn-view">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="notice-item" data-type="advisory" data-year="2024" data-date="2024-03-01">
+                        <div class="notice-header">
+                            <div class="notice-badge advisory">Advisory</div>
+                            <div class="notice-date">March 1, 2024</div>
+                        </div>
+                        <h3 class="notice-title">Advisory on Bank Account Verification</h3>
+                        <p class="notice-excerpt">Important advisory for students regarding bank account verification process and common issues faced during Aadhaar seeding.</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadPDF('advisory-001')" class="btn-download">📄 Download PDF</button>
+                            <button onclick="viewDetails('advisory-001')" class="btn-view">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="notice-item" data-type="notice" data-year="2024" data-date="2024-02-28">
+                        <div class="notice-header">
+                            <div class="notice-badge notice">Notice</div>
+                            <div class="notice-date">February 28, 2024</div>
+                        </div>
+                        <h3 class="notice-title">Extension of Application Deadline</h3>
+                        <p class="notice-excerpt">Application deadline for scholarship schemes extended due to technical issues. New deadline: March 31, 2024.</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadPDF('notice-002')" class="btn-download">📄 Download PDF</button>
+                            <button onclick="viewDetails('notice-002')" class="btn-view">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="notice-item" data-type="circular" data-year="2024" data-date="2024-02-25">
+                        <div class="notice-header">
+                            <div class="notice-badge circular">Circular</div>
+                            <div class="notice-date">February 25, 2024</div>
+                        </div>
+                        <h3 class="notice-title">Process for Grievance Redressal</h3>
+                        <p class="notice-excerpt">Detailed process for students to raise and track grievances related to scholarship applications and disbursements.</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadPDF('circular-002')" class="btn-download">📄 Download PDF</button>
+                            <button onclick="viewDetails('circular-002')" class="btn-view">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="notice-item" data-type="announcement" data-year="2024" data-date="2024-02-20">
+                        <div class="notice-header">
+                            <div class="notice-badge announcement">Announcement</div>
+                            <div class="notice-date">February 20, 2024</div>
+                        </div>
+                        <h3 class="notice-title">New Mobile App Launch</h3>
+                        <p class="notice-excerpt">Launch of mobile application for scholarship status tracking and Aadhaar seeding assistance. Download from Google Play Store.</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadPDF('announcement-002')" class="btn-download">📄 Download PDF</button>
+                            <button onclick="viewDetails('announcement-002')" class="btn-view">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="notice-item" data-type="notice" data-year="2023" data-date="2023-12-15">
+                        <div class="notice-header">
+                            <div class="notice-badge notice">Notice</div>
+                            <div class="notice-date">December 15, 2023</div>
+                        </div>
+                        <h3 class="notice-title">Annual Review of Scholarship Schemes</h3>
+                        <p class="notice-excerpt">Annual review and updates to scholarship schemes for the academic year 2024-25. Important changes in eligibility criteria.</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadPDF('notice-003')" class="btn-download">📄 Download PDF</button>
+                            <button onclick="viewDetails('notice-003')" class="btn-view">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="notice-item" data-type="advisory" data-year="2023" data-date="2023-11-30">
+                        <div class="notice-header">
+                            <div class="notice-badge advisory">Advisory</div>
+                            <div class="notice-date">November 30, 2023</div>
+                        </div>
+                        <h3 class="notice-title">Cyber Security Advisory</h3>
+                        <p class="notice-excerpt">Important advisory regarding cyber security measures while applying for scholarships online. Tips to avoid fraudulent websites.</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadPDF('advisory-002')" class="btn-download">📄 Download PDF</button>
+                            <button onclick="viewDetails('advisory-002')" class="btn-view">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="notice-item" data-type="circular" data-year="2023" data-date="2023-10-10">
+                        <div class="notice-header">
+                            <div class="notice-badge circular">Circular</div>
+                            <div class="notice-date">October 10, 2023</div>
+                        </div>
+                        <h3 class="notice-title">Implementation of Digital Signature</h3>
+                        <p class="notice-excerpt">New requirement for digital signature in scholarship applications. Guidelines for obtaining and using digital signatures.</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadPDF('circular-003')" class="btn-download">📄 Download PDF</button>
+                            <button onclick="viewDetails('circular-003')" class="btn-view">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-section">
+                    <button onclick="loadMoreNotices()" class="btn btn-secondary" id="loadMoreBtn">Load More Notices</button>
+                </div>
+
+                <!-- No Results Message -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <h3>No notices found</h3>
+                    <p>Try adjusting your search criteria or filters</p>
+                </div>
+            </div>
+        </section>
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="DBT_BOT"
+  agent-id="0afcacfc-bba6-404a-b5b9-d76e08e4daf5"
+  language-code="en"
+></df-messenger>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Important Links</h3>
+                        <ul>
+                            <li><a href="https://www.india.gov.in">India.gov.in</a></li>
+                            <li><a href="https://digitalindia.gov.in">Digital India</a></li>
+                            <li><a href="https://dbtbharat.gov.in">DBT Mission</a></li>
+                            <li><a href="https://socialjustice.gov.in">Ministry of Social Justice & Empowerment</a></li>
+                            <li><a href="https://www.mygov.in">MyGov</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Policies</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Copyright Policy</a></li>
+                            <li><a href="#">Accessibility Statement</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info">
+                            <p><strong>Department of Social Justice & Empowerment</strong></p>
+                            <p>Shastri Bhawan, Dr. Rajendra Prasad Road</p>
+                            <p>New Delhi - 110001</p>
+                            <p>Phone: 011-23381000</p>
+                            <p>Email: info@socialjustice.gov.in</p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Helpline</h3>
+                        <div class="helpline-info">
+                            <p><strong>Scholarship Helpline</strong></p>
+                            <p>📞 1800-11-1234 (Toll Free)</p>
+                            <p>🕒 Mon-Fri: 9:00 AM - 6:00 PM</p>
+                            <p><strong>Technical Support</strong></p>
+                            <p>📞 0120-4001000</p>
+                            <p>📧 support@dbtportal.gov.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Department of Social Justice & Empowerment, Government of India. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

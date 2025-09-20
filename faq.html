@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | DBT Awareness Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+</head>
+<body>
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar">
+        <div class="container">
+            <div class="accessibility-controls">
+                <button onclick="skipToContent()">Skip to Main content</button>
+                <div class="font-controls">
+                    <button onclick="changeFontSize('small')" class="font-btn">A-</button>
+                    <button onclick="changeFontSize('normal')" class="font-btn">A</button>
+                    <button onclick="changeFontSize('large')" class="font-btn">A+</button>
+                </div>
+                <div class="language-selector">
+                    <select onchange="translatePage(this.value)" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="bn">বাংলা</option>
+                        <option value="ta">தமிழ்</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23ff6600'/><path d='M30 30 L50 20 L70 30 L70 70 L50 80 L30 70 Z' fill='white'/><circle cx='50' cy='45' r='8' fill='%23ff6600'/><rect x='46' y='55' width='8' height='15' fill='%23ff6600'/></svg>" alt="Emblem of India" class="emblem">
+                    <div class="site-title">
+                        <h1>DBT Aadhaar Seeding Awareness Portal</h1>
+                        <p>Department of Social Justice & Empowerment, Government of India</p>
+                    </div>
+                </div>
+                <div class="header-logos">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><rect width='100' height='50' fill='%232563eb'/><text x='50' y='30' text-anchor='middle' fill='white' font-size='12'>Digital India</text></svg>" alt="Digital India" class="gov-logo">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><rect width='100' height='50' fill='%23f97316'/><text x='50' y='30' text-anchor='middle' fill='white' font-size='12'>DBT Mission</text></svg>" alt="DBT Mission" class="gov-logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About DBT</a></li>
+                <li><a href="guide.html">Aadhaar Seeding Guide</a></li>
+                <li><a href="notices.html">Notices & Circulars</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search FAQs..." onkeypress="handleSearch(event)" onkeyup="searchFAQs()">
+                <button onclick="performSearch()">🔍</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> > <span>Frequently Asked Questions</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-header">
+                    <h1>Frequently Asked Questions</h1>
+                </div>
+
+                <!-- FAQ Items -->
+                <div class="faq-container" id="faqContainer">
+                    
+                    <!-- Aadhaar Seeding FAQs -->
+                    <div class="faq-item" data-category="aadhaar" id="aadhaar-linking">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What is the difference between Aadhaar linking and Aadhaar seeding?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Aadhaar Linking:</strong> Simply connecting your Aadhaar number to your bank account for identification purposes.</p>
+                            <p><strong>Aadhaar Seeding:</strong> A more comprehensive process that enables Direct Benefit Transfer (DBT) capabilities on your account. This allows government benefits and scholarships to be transferred directly to your account.</p>
+                            <p><strong>Key Difference:</strong> All DBT-enabled accounts are Aadhaar seeded, but not all Aadhaar linked accounts are DBT-enabled. For scholarships, you need DBT-enabled Aadhaar seeded accounts.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="aadhaar">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How do I know if my bank account is DBT-enabled?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can verify your DBT status through multiple ways:</p>
+                            <ul>
+                                <li><strong>SMS Method:</strong> Send "UIDAI STATE your_aadhaar_number" to 51969</li>
+                                <li><strong>Online:</strong> Visit resident.uidai.gov.in and use Aadhaar services</li>
+                                <li><strong>Bank Statement:</strong> Request an updated statement that shows Aadhaar seeding status</li>
+                                <li><strong>Bank Visit:</strong> Ask your bank to confirm DBT enablement</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="aadhaar">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Can I do Aadhaar seeding online?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Online Aadhaar seeding availability depends on your bank:</p>
+                            <ul>
+                                <li><strong>Available:</strong> Some banks offer online Aadhaar seeding through net banking or mobile apps</li>
+                                <li><strong>ATM Option:</strong> Select banks provide Aadhaar seeding through ATMs</li>
+                                <li><strong>Recommended:</strong> Visit your bank branch for guaranteed completion and immediate verification</li>
+                                <li><strong>Requirements:</strong> You'll need your Aadhaar number and registered mobile number for OTP verification</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- DBT Process FAQs -->
+                    <div class="faq-item" data-category="dbt" id="dbt-status">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What is Direct Benefit Transfer (DBT)?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Direct Benefit Transfer (DBT) is a government initiative that:</p>
+                            <ul>
+                                <li>Transfers government subsidies and benefits directly to beneficiaries' bank accounts</li>
+                                <li>Uses Aadhaar authentication to ensure benefits reach the right person</li>
+                                <li>Eliminates intermediaries and reduces corruption</li>
+                                <li>Provides faster, transparent, and secure transfer of funds</li>
+                                <li>Covers scholarships, subsidies, pensions, and other government schemes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="dbt">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Why is DBT mandatory for scholarship payments?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>DBT is mandatory for scholarships because it:</p>
+                            <ul>
+                                <li><strong>Ensures Authenticity:</strong> Verifies that payments reach genuine beneficiaries</li>
+                                <li><strong>Prevents Fraud:</strong> Reduces fake applications and duplicate payments</li>
+                                <li><strong>Speeds Processing:</strong> Eliminates manual verification processes</li>
+                                <li><strong>Increases Transparency:</strong> Provides clear audit trails for all transactions</li>
+                                <li><strong>Government Policy:</strong> Mandatory as per Government of India directives</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Scholarship FAQs -->
+                    <div class="faq-item" data-category="scholarship">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Which scholarships require DBT-enabled Aadhaar seeding?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>All centrally sponsored scholarship schemes require DBT-enabled accounts, including:</p>
+                            <ul>
+                                <li><strong>Pre-Matric Scholarships:</strong> For SC students in classes I-X</li>
+                                <li><strong>Post-Matric Scholarships:</strong> For SC students in higher education</li>
+                                <li><strong>Merit-cum-Means Scholarships:</strong> For professional and technical courses</li>
+                                <li><strong>Top Class Education:</strong> For SC students in premier institutions</li>
+                                <li><strong>State-specific schemes:</strong> As implemented by individual states</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="scholarship" id="payment-issues">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>My scholarship payment is delayed. What should I do?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>For delayed scholarship payments:</p>
+                            <ol>
+                                <li><strong>Check DBT Status:</strong> Verify your account is DBT-enabled and active</li>
+                                <li><strong>Verify Details:</strong> Ensure name matching between Aadhaar and bank account</li>
+                                <li><strong>Contact Bank:</strong> Check if there are any account-related issues</li>
+                                <li><strong>Application Status:</strong> Check your application status on the scholarship portal</li>
+                                <li><strong>Helpline:</strong> Call 1800-11-1234 for assistance</li>
+                                <li><strong>Grievance:</strong> File a complaint on the official portal</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="scholarship" id="application-status">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How can I check my scholarship application status?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can check your application status through:</p>
+                            <ul>
+                                <li><strong>Official Portal:</strong> Login to the scholarship website with your credentials</li>
+                                <li><strong>Application ID:</strong> Use your application reference number to track status</li>
+                                <li><strong>SMS Updates:</strong> You'll receive SMS notifications on registered mobile</li>
+                                <li><strong>Email:</strong> Check your registered email for status updates</li>
+                                <li><strong>Helpline:</strong> Call 1800-11-1234 with your application details</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Technical Issues FAQs -->
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>I'm getting "Aadhaar seeding failed" error. What to do?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Common reasons and solutions for seeding failures:</p>
+                            <ul>
+                                <li><strong>Name Mismatch:</strong> Ensure exact name matching between Aadhaar and bank account</li>
+                                <li><strong>Inactive Aadhaar:</strong> Check if your Aadhaar is active and not suspended</li>
+                                <li><strong>Wrong Mobile:</strong> Use the mobile number registered with Aadhaar for OTP</li>
+                                <li><strong>Network Issues:</strong> Try again after some time with stable internet</li>
+                                <li><strong>Bank System:</strong> Some banks have scheduled maintenance - try later</li>
+                                <li><strong>Visit Branch:</strong> If online methods fail, visit your bank branch</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What if my Aadhaar and bank account names don't match exactly?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Name discrepancy can prevent successful DBT transactions. Here's what to do:</p>
+                            <ul>
+                                <li><strong>Minor Differences:</strong> Sometimes banks accept minor spelling variations</li>
+                                <li><strong>Update Aadhaar:</strong> Visit Aadhaar center to correct your name with supporting documents</li>
+                                <li><strong>Update Bank:</strong> Submit name change request to your bank with identity proofs</li>
+                                <li><strong>Choose Easier Option:</strong> Update whichever is easier - Aadhaar or bank record</li>
+                                <li><strong>Required Documents:</strong> School certificate, passport, or other government ID</li>
+                                <li><strong>Timeline:</strong> Name updates may take 7-15 days to reflect in systems</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Can I use a joint account for scholarship payments?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Joint account usage for scholarships:</p>
+                            <ul>
+                                <li><strong>Generally Not Recommended:</strong> Scholarships should be received in individual accounts</li>
+                                <li><strong>Primary Account Holder:</strong> If using joint account, student should be primary holder</li>
+                                <li><strong>Aadhaar Requirement:</strong> Primary holder's Aadhaar should be used for seeding</li>
+                                <li><strong>Verification Issues:</strong> Joint accounts may face additional verification</li>
+                                <li><strong>Recommended:</strong> Open individual savings account in student's name</li>
+                                <li><strong>Minor Students:</strong> Parents can be joint holders for minor students</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="scholarship">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What are the income limits for scholarship eligibility?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Income limits for different scholarship schemes:</p>
+                            <ul>
+                                <li><strong>Pre-Matric Scholarships:</strong> Family income should not exceed ₹2.50 lakh per annum</li>
+                                <li><strong>Post-Matric Scholarships:</strong> Family income should not exceed ₹2.50 lakh per annum</li>
+                                <li><strong>Merit-cum-Means:</strong> Varies by course and institution</li>
+                                <li><strong>Top Class Education:</strong> Family income should not exceed ₹8.00 lakh per annum</li>
+                                <li><strong>Income Certificate:</strong> Required from competent authority (Tehsildar/SDM)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="aadhaar">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Do I need to visit bank branch for Aadhaar seeding?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Bank branch visit recommendations:</p>
+                            <ul>
+                                <li><strong>Highly Recommended:</strong> Branch visit ensures proper completion</li>
+                                <li><strong>Online Alternatives:</strong> Some banks offer online/ATM seeding</li>
+                                <li><strong>Immediate Verification:</strong> Branch staff can verify DBT enablement instantly</li>
+                                <li><strong>Documentation Help:</strong> Staff can assist with any issues or discrepancies</li>
+                                <li><strong>Receipt:</strong> Get written acknowledgment of successful seeding</li>
+                                <li><strong>Follow-up:</strong> Branch can help track and resolve any issues</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="dbt">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How long does the DBT seeding process take?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Timeline for DBT seeding process:</p>
+                            <ul>
+                                <li><strong>At Branch:</strong> Usually completed within 30 minutes</li>
+                                <li><strong>System Updates:</strong> 2-3 working days for complete activation</li>
+                                <li><strong>Online Process:</strong> Instant if successful, may need branch visit if failed</li>
+                                <li><strong>Verification:</strong> Can check status after 24-48 hours</li>
+                                <li><strong>First Payment:</strong> May take 5-7 days for first DBT transaction</li>
+                                <li><strong>Issues:</strong> Resolution may take 7-15 days if documents need updating</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What happens if my mobile number is not updated in Aadhaar?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Mobile number importance and solutions:</p>
+                            <ul>
+                                <li><strong>Critical Requirement:</strong> Updated mobile number is essential for OTP verification</li>
+                                <li><strong>Update Methods:</strong> Visit Aadhaar center, use online portal, or SMS service</li>
+                                <li><strong>Online Update:</strong> Visit resident.uidai.gov.in for online mobile update</li>
+                                <li><strong>Biometric Update:</strong> May require biometric verification at Aadhaar center</li>
+                                <li><strong>Bank Coordination:</strong> Ensure same mobile number is registered with bank</li>
+                                <li><strong>Timeline:</strong> Mobile update reflects within 24 hours usually</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Still Have Questions -->
+                <div class="more-help-section">
+                    <h2>Still Have Questions?</h2>
+                    <p>If you couldn't find the answer to your question, we're here to help!</p>
+                    <div class="help-options">
+                        <a href="contact.html" class="btn btn-primary">Contact Support</a>
+                        <a href="guide.html" class="btn btn-secondary">View Complete Guide</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="DBT_BOT"
+  agent-id="0afcacfc-bba6-404a-b5b9-d76e08e4daf5"
+  language-code="en"
+></df-messenger>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Important Links</h3>
+                        <ul>
+                            <li><a href="https://www.india.gov.in">India.gov.in</a></li>
+                            <li><a href="https://digitalindia.gov.in">Digital India</a></li>
+                            <li><a href="https://dbtbharat.gov.in">DBT Mission</a></li>
+                            <li><a href="https://socialjustice.gov.in">Ministry of Social Justice & Empowerment</a></li>
+                            <li><a href="https://www.mygov.in">MyGov</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Policies</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Copyright Policy</a></li>
+                            <li><a href="#">Accessibility Statement</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info">
+                            <p><strong>Department of Social Justice & Empowerment</strong></p>
+                            <p>Shastri Bhawan, Dr. Rajendra Prasad Road</p>
+                            <p>New Delhi - 110001</p>
+                            <p>Phone: 011-23381000</p>
+                            <p>Email: info@socialjustice.gov.in</p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Helpline</h3>
+                        <div class="helpline-info">
+                            <p><strong>Scholarship Helpline</strong></p>
+                            <p>📞 1800-11-1234 (Toll Free)</p>
+                            <p>🕒 Mon-Fri: 9:00 AM - 6:00 PM</p>
+                            <p><strong>Technical Support</strong></p>
+                            <p>📞 0120-4001000</p>
+                            <p>📧 support@dbtportal.gov.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Department of Social Justice & Empowerment, Government of India. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
